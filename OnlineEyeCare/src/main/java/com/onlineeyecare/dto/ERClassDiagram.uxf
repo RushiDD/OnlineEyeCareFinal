@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+// fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>3</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>141</y>
+      <w>102</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::Patient
+--
+-patientId: int
+-patientName: String
+-patientAge: int
+-patientMobile: long
+-patientEmail: String
+-patientDOB: LocalDate
+-patientUserName: String
+-patientPassword: String
+-address: String
+-appointment: List&lt;Appointment&gt;
+--
++Patient(): ctor
++Patient(int patientId, String patientName, int patientAge, long patientMobile, String patientEmail, LocalDate patientDOB, String patientUserName, String patientPassword, String address): ctor
++getPatientId(): int
++setPatientId(int patientId): void
++getPatientName(): String
++setPatientName(String patientName): void
++getPatientAge(): int
++setPatientAge(int patientAge): void
++getPatientMobile(): long
++setPatientMobile(long patientMobile): void
++getPatientEmail(): String
++setPatientEmail(String patientEmail): void
++getPatientDOB(): LocalDate
++setPatientDOB(LocalDate patientDOB): void
++getPatientUserName(): String
++setPatientUserName(String patientUserName): void
++getPatientPassword(): String
++setPatientPassword(String patientPassword): void
++getAddress(): String
++setAddress(String address): void
++toString(): String
++get(int i): Patient
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>333</x>
+      <y>138</y>
+      <w>132</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::Doctor
+--
++doctorId: Integer
+-doctorName: String
+-doctorConsultationTime: String
+-doctorMobile: long
+-doctorEmail: String
+-doctorUsername: String
+-doctorPassword: String
+-doctorAddress: String
++tests: List&lt;TestModule&gt;
+--
++Doctor(): ctor
++Doctor(Integer doctorId, String doctorName, String doctorConsultationTime, long doctorMobile, String doctorEmail, String doctorUsername, String doctorPassword, String doctorAddress, List&lt;TestModule&gt; tests): ctor
++getDoctorId(): Integer
++setDoctorId(Integer doctorId): void
++getDoctorName(): String
++setDoctorName(String doctorName): void
++getDoctorConsultationTime(): String
++setDoctorConsultationTime(String doctorConsultationTime): void
++getDoctorMobile(): long
++setDoctorMobile(long doctorMobile): void
++getDoctorEmail(): String
++setDoctorEmail(String doctorEmail): void
++getDoctorUsername(): String
++setDoctorUsername(String doctorUsername): void
++getDoctorPassword(): String
++setDoctorPassword(String doctorPassword): void
++getDoctorAddress(): String
++setDoctorAddress(String doctorAddress): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>315</x>
+      <y>306</y>
+      <w>120</w>
+      <h>141</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::Report
+--
+-serialVersionUID = 1L: long
+-reportId: int
+-dateOfReport: LocalDateTime
+-descriptionOfReport: String
+-visualAcuity: String
+-visualAcuityNear: String
+-visualAcuityDistance: String
+-typeOfTest: TestModule
+-patientId: Patient
+--
++Report(): ctor
++Report(int reportId, LocalDateTime dateOfReport, String descriptionOfReport, String visualAcuity, String visualAcuityNear, String visualAcuityDistance): ctor
++getReportId(): int
++setReportId(int reportId): void
++getDateOfReport(): LocalDateTime
++setDateOfReport(LocalDateTime dateOfReport): void
++getDescriptionOfReport(): String
++setDescriptionOfReport(String descriptionOfReport): void
++getVisualAcuity(): String
++setVisualAcuity(String visualAcuity): void
++getVisualAcuityNear(): String
++setVisualAcuityNear(String visualAcuityNear): void
++getVisualAcuityDistance(): String
++setVisualAcuityDistance(String visualAcuityDistance): void
++toString(): String
++getDateOfReport1(): LocalDateTime
++getPatientId(): Patient
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>306</y>
+      <w>117</w>
+      <h>123</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::Appointment
+--
+-appointmentId: Integer
+-dateOfAppointment: LocalDate
+~timeOfAppointment: LocalTime
+~consultationFee: Double
+~doctor_Id: Doctor
+~patient_Id: Patient
+--
++Appointment(): ctor
++Appointment(Integer appointmentId, LocalDate dateOfAppointment, LocalTime timeOfAppointment, Double consultationFee, Doctor doctorId, Patient patientId): ctor
++getAppointmentId(): Integer
++setAppointmentId(Integer appointmentId): void
++getDateOfAppointment(): LocalDate
++setDateOfAppointment(LocalDate dateOfAppointment): void
++getTimeOfAppointment(): LocalTime
++setTimeOfAppointment(LocalTime timeOfAppointment): void
++getConsultationFee(): Double
++setConsultationFee(Double consultationFee): void
++getDoctor_Id(): Doctor
++setDoctor_Id(Doctor doctor_Id): void
++getPatient_Id(): Patient
++setPatient_Id(Patient patient_Id): void
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>333</y>
+      <w>108</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::TestModule
+--
+-serialVersionUID = 1L: long
+-testId: int
+-testName: String
+-testType: String
+-testDescription: String
+-testCost: double
+--
++TestModule(): ctor
++TestModule(int testId, String testName, String testType, String testDescription, double testCost): ctor
++getTestId(): int
++setTestId(int testId): void
++getTestName(): String
++setTestName(String testName): void
++getTestType(): String
++setTestType(String testType): void
++getTestDescription(): String
++getTestCost(): double
++setTestCost(double testCost): void
++setTestDescription(String testDescription): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>207</x>
+      <y>462</y>
+      <w>132</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::Admin
+--
+-adminId: int
+-adminUsername: String
+-adminPassword: String
+--
++Admin(): ctor
++Admin(int adminId, String adminUsername, String adminPassword): ctor
++getAdminId(): int
++setAdminId(int adminId): void
++getAdminUsername(): String
++setAdminUsername(String adminUsername): void
++getAdminPassword(): String
++setAdminPassword(String adminPassword): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>375</x>
+      <y>459</y>
+      <w>117</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>com.onlineeyecare.dto::User
+--
+-userName: String
+-password: String
+-role: String
+--
++User(): ctor
++User(String userName, String password, String role): ctor
++getUserName(): String
++setUserName(String userName): void
++getPassword(): String
++setPassword(String password): void
++getRole(): String
++setRole(String role): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
